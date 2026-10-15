@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0b0e13">
+  <title>APEX DRIVE — 3D Poyga Simulyator</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="icon" href="./img/logo.png">
+
+</head>
+<body>
+  <main id="game">
+    <div id="hud">
+      <div class="brand"><span class="brand-mark">A</span>
+        <div><b>APEX DRIVE</b><small>3D RACING SIMULATOR</small></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><small>TEZLIK</small><strong><span id="speed">0</span><em> KM/H</em></strong></div>
+        <div class="stat"><small>MASOFA</small><strong><span id="distance">0</span><em> M</em></strong></div>
+        <div class="stat"><small>HISOB</small><strong id="score">000000</strong></div>
+        <div class="stat level-stat"><small>DARAJA</small><strong>LVL <span id="level">1</span></strong></div>
+        <div class="stat heat-stat"><small>POLITSIYA</small><strong><span id="heat">0</span>%</strong></div>
+        <div class="stat damage-stat"><small>SHIKAST</small><strong><span id="damage">0</span>%</strong></div>
+        <div class="stat best-stat"><small>REKORD</small><strong id="bestScore">000000</strong></div>
+      </div><button id="pauseBtn" class="icon-btn" aria-label="Pauza">Ⅱ</button>
+    </div>
+    <div id="countdown" class="countdown hidden">3</div>
+    <div id="startScreen" class="overlay">
+      <div class="panel">
+        <p class="eyebrow">RACE SERIES / SIM 01</p>
+        <h1>OWN THE<br><span>ROAD.</span></h1>
+        <p class="intro">Realistikroq boshqaruv, darajalar oshib boradigan qiyin trassa, nitro va politsiya quvishi.</p>
+        <div class="controls">
+          <div><kbd>←</kbd><kbd>→</kbd><span>BURILISH</span></div>
+          <div><kbd>↑</kbd><kbd>W</kbd><span>GAZ</span></div>
+          <div><kbd>↓</kbd><kbd>S</kbd><span>TORMOZ</span></div>
+          <div><kbd>SHIFT</kbd><span>NITRO</span></div>
+        </div>
+        <div class="garage">
+          <div><span class="eyebrow">GARAJ / AVTOMOBIL</span><strong id="carName">APEX SPORT</strong><small
+              id="carSpecs">SPORT • 320 KM/H</small><small>KREDIT: <b id="credits">0</b> · OCHILGAN: <b
+                id="unlockedCars">1/5</b></small></div>
+          <div class="garage-actions"><button id="prevCar" class="secondary-btn small-btn">‹</button><button
+              id="nextCar" class="secondary-btn small-btn">›</button></div>
+        </div>
+        <button id="startBtn" class="primary-btn">POYGANI BOSHLASH <span>↗</span></button>
+        <p class="hint">ENTER — boshlash · ESC — pauza · R — qayta boshlash</p>
+      </div>
+    </div>
+    <div id="endScreen" class="overlay hidden">
+      <div class="panel result-panel">
+        <p class="eyebrow" id="resultEyebrow">RACE COMPLETE</p>
+        <h2 id="resultTitle">FINISH!</h2>
+        <p id="resultText" class="intro">Ajoyib poyga.</p>
+        <div class="result-stats">
+          <div><small>YAKUNIY HISOB</small><strong id="finalScore">0</strong></div>
+          <div><small>MASOFA</small><strong id="finalDistance">0 m</strong></div>
+          <div><small>ENG YAXSHI</small><strong id="finalBest">0</strong></div>
+        </div><button id="restartBtn" class="primary-btn">QAYTA BOSHLASH <span>↻</span></button><button id="garageBtn"
+          class="secondary-btn">GARAJGA QAYTISH</button>
+      </div>
+    </div>
+    <div id="pauseScreen" class="overlay hidden">
+      <div class="panel pause-panel">
+        <p class="eyebrow">RACE PAUSED</p>
+        <h2>PAUZA</h2>
+        <p class="intro">Bir oz dam ol. Yo‘l seni kutmoqda.</p><button id="resumeBtn" class="primary-btn">DAVOM ETISH
+          <span>▶</span></button><button id="pauseRestartBtn" class="secondary-btn">QAYTA BOSHLASH</button>
+      </div>
+    </div>
+    <div id="bottomHud">
+      <div class="status"><span class="live-dot"></span><span id="statusText">MOTOR TAYYOR</span></div>
+      <div class="weather-label" id="weatherLabel">☀ QURUQ</div>
+      <div class="progress-wrap"><span>CHEKSIZ YO‘L</span>
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div><b id="progressText">∞</b>
+      </div>
+      <div class="nitro-wrap"><span>NITRO</span>
+        <div class="nitro-track">
+          <div id="nitroBar"></div>
+        </div>
+      </div>
+      <div class="mini-help">ESC <span>PAUZA</span></div>
+    </div>
+    <div id="mobileControls"><button data-key="arrowleft" aria-label="Chapga">◀</button>
+      <div class="mobile-center"><button data-key="arrowup">▲</button><button data-key="shift"
+          id="mobileNitro">N₂O</button><button data-key="arrowdown">▼</button></div><button data-key="arrowright"
+        aria-label="O‘ngga">▶</button>
+    </div>
+    <div id="flash"></div>
+    <div id="toast" class="hidden"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
